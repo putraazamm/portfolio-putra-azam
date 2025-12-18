@@ -334,30 +334,24 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="flex items-center justify-center text-center px-4 max-w-4xl z-10 border border-white/10 backdrop-blur-sm bg-white/3 rounded-2xl ">
-              <Tooltip content="Instagram">
-                <a
-                  href="https://instagram.com/putraazamm"
-                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
-                >
-                  <Instagram />
-                </a>
-              </Tooltip>
-              <Tooltip content="GitHub">
-                <a
-                  href="https://github.com/putraazamm"
-                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
-                >
-                  <Github />
-                </a>
-              </Tooltip>
-              <Tooltip content="LinkedIn">
-                <a
-                  href="https://www.linkedin.com/in/putra-azam-9ab23a34a/"
-                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
-                >
-                  <Linkedin />
-                </a>
-              </Tooltip>
+              <a
+                href="https://instagram.com/putraazamm" target="_blank"
+                className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
+              >
+                <Instagram />
+              </a>
+              <a
+                href="https://github.com/putraazamm" target="_blank"
+                className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
+              >
+                <Github />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/putra-azam-9ab23a34a/" target="_blank"
+                className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
+              >
+                <Linkedin />
+              </a>
             </div>
           </div>
 
