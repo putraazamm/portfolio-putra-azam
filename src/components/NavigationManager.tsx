@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/ui/Navbar";
 import Image from "next/image";
 import Dock from "@/components/Dock";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   Home,
   User,
@@ -17,6 +19,7 @@ import { AnimatePresence, color, motion } from "motion/react";
 
 export default function NavigationManager() {
   const [showDock, setShowDock] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,22 +39,22 @@ export default function NavigationManager() {
     {
       icon: <Home size={18} className="text-white" />,
       label: "Home",
-      onClick: () => (window.location.href = "/#home"),
+      onClick: () => router.push("/#home"),
     },
     {
       icon: <User size={18} className="text-white" />,
       label: "About",
-      onClick: () => (window.location.href = "/#about"),
+      onClick: () => router.push("/#about"),
     },
     {
       icon: <Briefcase size={18} className="text-white" />,
       label: "Experience",
-      onClick: () => (window.location.href = "/#experience"), // Placeholder
+      onClick: () => router.push("/#experience"),
     },
     {
       icon: <Mail size={18} className="text-white" />,
       label: "Contact",
-      onClick: () => (window.location.href = "/#contact"), // Placeholder
+      onClick: () => router.push("/#contact"),
     },
   ];
 
@@ -86,12 +89,12 @@ export default function NavigationManager() {
                 initial={{ scale: 0, rotate: -180, opacity: 0 }}
                 animate={{ scale: 1, rotate: 0, opacity: 1 }}
                 exit={{ scale: 0, rotate: -180, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20}}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 className="mix-blend-exclusion"
               >
-                <a href="/#home" className="pointer-events-auto">
+                <Link href="/#home" className="pointer-events-auto">
                   <img
-                    src="/asterisk-logo.svg"
+                    src="/portfolio-putra-azam/asterisk-logo.svg"
                     alt="Asterisk Logo"
                     width={67}
                     height={67}
@@ -101,7 +104,7 @@ export default function NavigationManager() {
                     }}
                     className=""
                   />
-                </a>
+                </Link>
               </motion.div>
             </div>
           </>

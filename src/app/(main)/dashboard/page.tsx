@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -64,7 +64,7 @@ export default function Dashboard() {
       >
         <div className="absolute top-0 left-0 px-7 py-6">
           <img
-            src="/logo-header.svg"
+            src="/portfolio-putra-azam/logo-header.svg"
             alt="Logo"
             width={150}
             height={150}
@@ -112,7 +112,7 @@ export default function Dashboard() {
           className={`relative flex-shrink-0 ${IMAGE_SETTINGS.width} ${IMAGE_SETTINGS.aspectRatio} ${IMAGE_SETTINGS.borderRadius} overflow-hidden shadow-2xl z-20`}
         >
           <Image
-            src="/about-me.jpg"
+            src="/portfolio-putra-azam/about-me.jpg"
             alt="About Me"
             fill
             className="object-cover"
