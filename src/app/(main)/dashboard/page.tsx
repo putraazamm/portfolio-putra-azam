@@ -101,7 +101,7 @@ export default function Dashboard() {
           />
         </div>
 
-        <div className="absolute top-0 right-0 px-7 py-6 hidden md:block">
+        <div className="absolute top-0 right-0 px-7 py-6 hidden lg:block">
           <a className="" href="#contact">
             <p className="border px-6 py-2 rounded-full text-white font-display hover:text-black hover:border-orange-100 flex items-center gap-4 bg-white/10 backdrop-blur-md hover:bg-orange-100 transition-all duration-200 ">
               <span className="w-2 h-2 rounded-full bg-green-400"></span>
@@ -285,6 +285,55 @@ export default function Dashboard() {
       </section>
 
       <section
+        id="academic-history"
+        className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 z-10"
+      >
+        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-16">
+          Academic History
+        </h2>
+        <div className="flex flex-col gap-8 w-full max-w-3xl">
+          {[
+            {
+              schoolName: "Technical University of Malaysia Malacca",
+              period: "2023 - Present",
+              description:
+                "Studying Computer Science, focusing on Software Development.",
+            },
+            {
+              schoolName: "Sekolah Menengah Kebangsaan Sultan Abdul Jalil",
+              period: "2021 - 2022",
+              description: "Pursued in STPM. Studying Arts and Economics.",
+            },
+            {
+              schoolName: "Maktab Rendah Sains MARA Gerik",
+              period: "2016 - 2020",
+              description: "Pure Science and Mathematics, Got 5As in SPM.",
+            },
+          ].map((school, index) => (
+            <div
+              key={index}
+              className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-white group-hover:text-orange-200 transition-colors">
+                    {school.schoolName}
+                  </h3>
+                  <p className="text-lg text-white/80">{school.period}</p>
+                </div>
+                <span className="text-sm font-normal text-white bg-white/10 px-4 py-1.5 rounded-full w-fit">
+                  {school.period}
+                </span>
+              </div>
+              <p className="text-white/70 leading-relaxed font-light">
+                {school.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
         id="contact"
         className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 z-10"
       >
@@ -335,19 +384,22 @@ export default function Dashboard() {
             </div>
             <div className="flex items-center justify-center text-center px-4 max-w-4xl z-10 border border-white/10 backdrop-blur-sm bg-white/3 rounded-2xl ">
               <a
-                href="https://instagram.com/putraazamm" target="_blank"
+                href="https://instagram.com/putraazamm"
+                target="_blank"
                 className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
               >
                 <Instagram />
               </a>
               <a
-                href="https://github.com/putraazamm" target="_blank"
+                href="https://github.com/putraazamm"
+                target="_blank"
                 className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
               >
                 <Github />
               </a>
               <a
-                href="https://www.linkedin.com/in/putra-azam-9ab23a34a/" target="_blank"
+                href="https://www.linkedin.com/in/putra-azam-9ab23a34a/"
+                target="_blank"
                 className="p-3 opacity-60 hover:opacity-100 transition-all duration-400 hover:drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"
               >
                 <Linkedin />

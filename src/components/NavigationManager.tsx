@@ -13,6 +13,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  School,
 } from "lucide-react";
 import { AnimatePresence, color, motion } from "motion/react";
 
@@ -55,6 +56,11 @@ export default function NavigationManager() {
       icon: <Briefcase size={18} className="text-white" />,
       label: "Experience",
       onClick: () => handleScrollTo("experience"),
+    },
+    {
+      icon: <School size={18} className="text-white" />,
+      label: "Academic History",
+      onClick: () => handleScrollTo("academic-history"),
     },
     {
       icon: <Mail size={18} className="text-white" />,
