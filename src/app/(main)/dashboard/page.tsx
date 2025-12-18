@@ -16,7 +16,15 @@ import {
   Phone,
   MapPin,
   Send,
+  Instagram,
+  Github,
+  Linkedin,
 } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import Tooltip from "@/components/ui/Tooltip";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Dashboard() {
   const form = useRef<HTMLFormElement>(null);
@@ -52,7 +60,7 @@ export default function Dashboard() {
           console.error("FAILED...", error);
           setIsSending(false);
           alert("Failed to send message. Please try again.");
-        },
+        }
       );
     }
   };
@@ -62,6 +70,19 @@ export default function Dashboard() {
     aspectRatio: "aspect-[3/4]",
     borderRadius: "rounded-2xl",
   };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-char",
+      { y: "100%" },
+      {
+        y: "0%",
+        duration: 1.5,
+        ease: "power4.inOut",
+        stagger: 0.05,
+      }
+    );
+  }, []);
 
   return (
     <div className="relative w-full flex flex-col">
@@ -90,13 +111,37 @@ export default function Dashboard() {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center px-4 max-w-4xl z-10">
-          <div className="flex flex-col leading-[0.55] items-center">
-            <h1 className="lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px] tracking-[-.06em] font-display font-bold pr-20 text-white select-none">
+          <div className="flex flex-col items-center select-none">
+            {/* <h1 className="lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px] tracking-[-.06em] font-display font-bold pr-20 text-white select-none">
               putra
             </h1>
             <h1 className="lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px] tracking-[-.06em] font-display font-normal pl-20 text-white select-none">
               azam
-            </h1>
+            </h1> */}
+            <div className="flex mr-20 lg:tracking-[-1.2em] md:tracking-[-0.9em] ml-5 tracking-[-0.5em]">
+              {["p", "u", "t", "r", "a"].map((char, index) => (
+                <div
+                  key={index}
+                  className="overflow-hidden pb-4 md:pb-8 lg:pb-12"
+                >
+                  <div className="hero-char h1 font-space font-bold leading-none lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px]">
+                    {char}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex ml-20 md:tracking-[-1.5em] tracking-[-0.5em] -mt-19 mr-5 md:-mt-43 lg:-mt-60">
+              {["a", "z", "a", "m"].map((char, index) => (
+                <div
+                  key={index}
+                  className="overflow-hidden pb-4 md:pb-8 lg:pb-12"
+                >
+                  <div className="hero-char h1 font-space font-semibold leading-none lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px]">
+                    {char}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* <p className="text-white text-sm md:text-lg mt-20 select-none p-5">
@@ -287,6 +332,32 @@ export default function Dashboard() {
                   </div>
                 </a>
               ))}
+            </div>
+            <div className="flex items-center justify-center text-center px-4 max-w-4xl z-10 border border-white/10 backdrop-blur-sm bg-white/3 rounded-2xl ">
+              <Tooltip content="Instagram">
+                <a
+                  href="https://instagram.com/putraazamm"
+                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
+                >
+                  <Instagram />
+                </a>
+              </Tooltip>
+              <Tooltip content="GitHub">
+                <a
+                  href="https://github.com/putraazamm"
+                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
+                >
+                  <Github />
+                </a>
+              </Tooltip>
+              <Tooltip content="LinkedIn">
+                <a
+                  href="https://www.linkedin.com/in/putra-azam-9ab23a34a/"
+                  className="p-3 opacity-60 hover:opacity-100 transition-all duration-200"
+                >
+                  <Linkedin />
+                </a>
+              </Tooltip>
             </div>
           </div>
 

@@ -1,3 +1,4 @@
+import NavigationManager from "@/components/NavigationManager";
 import Dashboard from "./(main)/dashboard/page";
 
 export default function Home() {
