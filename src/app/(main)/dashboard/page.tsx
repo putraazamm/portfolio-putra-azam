@@ -147,14 +147,14 @@ export default function Dashboard() {
                     <a
                       href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"
                       target="_blank"
-                      className={`absolute lg:bottom-[24.5%] md:bottom-[23.7%] left-1/2 -translate-x-1/2 overflow-hidden h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] flex items-end justify-center z-[1000] transition-opacity duration-500 ${
+                      className={`absolute lg:bottom-[24.5%] md:bottom-[23.7%] left-[55%] -translate-x-1/2 overflow-hidden h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] flex items-end justify-center z-[1000] transition-opacity duration-500 ${
                         isIntroDone
-                          ? "opacity-100 pointer-events-none md:pointer-events-auto group-hover:[&>img]:translate-y-[55%]"
+                          ? "opacity-100 pointer-events-none md:pointer-events-auto group-hover:[&>img]:translate-y-[0%]"
                           : "opacity-0 pointer-events-none"
                       }`}
                     >
                       <img
-                        src={`${basePath}/hero-icon.svg`}
+                        src={`${basePath}/head-peek-out.svg`}
                         alt="heroicon"
                         width={500}
                         height={500}
