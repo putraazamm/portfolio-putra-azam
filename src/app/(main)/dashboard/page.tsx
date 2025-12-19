@@ -23,6 +23,7 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Tooltip from "@/components/ui/Tooltip";
+import NavigationManager from "@/components/NavigationManager";
 
 gsap.registerPlugin(useGSAP);
 
@@ -79,7 +80,7 @@ export default function Dashboard() {
       {
         y: "0%",
         duration: 1.5,
-        ease: "power4.inOut",
+        ease: "power3.out",
         stagger: 0.05,
         onComplete: () => setIsIntroDone(true),
       }
@@ -88,6 +89,7 @@ export default function Dashboard() {
 
   return (
     <div className="relative w-full flex flex-col">
+      <NavigationManager />
       {/* Hero Section */}
       <section
         id="home"

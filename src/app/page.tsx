@@ -1,5 +1,6 @@
 import NavigationManager from "@/components/NavigationManager";
 import Dashboard from "./(main)/dashboard/page";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 export default function Home() {
   return (
