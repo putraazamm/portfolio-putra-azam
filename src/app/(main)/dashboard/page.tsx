@@ -30,6 +30,7 @@ export default function Dashboard() {
   const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,6 +81,7 @@ export default function Dashboard() {
         duration: 1.5,
         ease: "power4.inOut",
         stagger: 0.05,
+        onComplete: () => setIsIntroDone(true),
       }
     );
   }, []);
@@ -97,7 +99,7 @@ export default function Dashboard() {
             alt="Logo"
             width={150}
             height={150}
-            className="md:w-1/2 lg:w-1/3"
+            className="w-1/4 md:w-1/2 lg:w-1/3"
           />
         </div>
 
@@ -111,7 +113,7 @@ export default function Dashboard() {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center px-4 max-w-4xl z-10">
-          <div className="flex flex-col items-center select-none">
+          <div className="flex flex-col items-center select-none group">
             {/* <h1 className="lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px] tracking-[-.06em] font-display font-bold pr-20 text-white select-none">
               putra
             </h1>
@@ -134,11 +136,30 @@ export default function Dashboard() {
               {["a", "z", "a", "m"].map((char, index) => (
                 <div
                   key={index}
-                  className="overflow-hidden pb-4 md:pb-8 lg:pb-12"
+                  className="relative flex justify-center overflow-visible"
                 >
-                  <div className="hero-char h1 font-space font-semibold leading-none lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px]">
+                  <div className="hero-char h1 font-space font-semibold leading-none lg:text-[400px] md:text-[300px] sm:text-[250px] text-[150px] overflow-hidden pb-4 md:pb-8 lg:pb-12 z-30 relative pointer-events-none">
                     {char}
                   </div>
+                  {char === "z" && (
+                    <a
+                      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"
+                      target="_blank"
+                      className={`absolute lg:bottom-[24.5%] md:bottom-[23.7%] left-1/2 -translate-x-1/2 overflow-hidden h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] flex items-end justify-center z-[1000] transition-opacity duration-500 ${
+                        isIntroDone
+                          ? "opacity-100 pointer-events-none md:pointer-events-auto group-hover:[&>img]:translate-y-[55%]"
+                          : "opacity-0 pointer-events-none"
+                      }`}
+                    >
+                      <img
+                        src={`${basePath}/hero-icon.svg`}
+                        alt="heroicon"
+                        width={500}
+                        height={500}
+                        className="transform translate-y-[100%] hover:-translate-y-[0%] transition-transform duration-500 ease-in-out cursor-pointer md:block hidden z-2000"
+                      />
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

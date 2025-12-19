@@ -18,7 +18,7 @@ export default function Navbar() {
     <>
       <div className="absolute top-0 flex w-full justify-center p-7 z-50 pointer-events-none">
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6 px-8 py-3 items-center rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg pointer-events-auto">
+        <div className="hidden lg:flex gap-6 px-8 py-3 items-center rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg pointer-events-auto">
           {links.map((link) => (
             <a
               key={link.name}
@@ -31,7 +31,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="md:hidden flex w-full justify-end pointer-events-auto">
+        <div className="md:flex lg:hidden flex w-full justify-end items-center pointer-events-auto">
           <button
             onClick={() => setIsOpen(true)}
             className="p-3 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg"
